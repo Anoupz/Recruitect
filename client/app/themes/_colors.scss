@@ -1,0 +1,91 @@
+ /*  ==================================================================
+    COLOR PALETTE with major groups and their variations
+    ==================================================================  */
+
+  $color-palette: (
+
+      gray: (
+        #fff,
+        #f8f8f8,
+        #f5f5f5,
+        #e6e6e6,
+        #c6c6c6,
+        #959595,
+        #818181,
+        #4d4d4d,
+        #292929,
+        #000,
+        #ccc
+      ),
+      orange: (
+        #fff4eb,
+        #ffe9d6,
+        #ffc5a4,
+        #ffaf82,
+        #fe9a60,
+        #ff843d,
+        #fe7800,
+        #f07000,
+        #f55400
+      ),
+      magenta: (
+        #feecf5,
+        #fdd8eb,
+        #f2abc0,
+        #ed8eab,
+        #e97199,
+        #e54c87,
+        #e20c77,
+        #bd0a64,
+        #7f0040
+      ),
+      teal: (
+        #eefbfb,
+        #def7f7,
+        #2dc2bf,
+        #27a8a6
+      ),
+      green: (
+        #fafbee,
+        #f1f4cd,
+        #c1cf2e,
+        #ecfcd9,
+        #edfdf1,
+        #6fc30d,
+        #f5feec,
+        #dafbe4,
+        #119e3c
+      ),
+      yellow: (
+        #fff8eb,
+        #fff2d7,
+        #fdb820
+      ),
+      red: (
+        #fdedec,
+        #f9dce4,
+        #f2635d,
+        #d0021b,
+        #ad1d43
+      )
+
+  );
+
+
+
+/*  ==================================================================
+    Get color based on the color group and its level using the Color Palette
+    ==================================================================  */
+
+  @function get-color($color-group, $level) {
+    @each $color-family, $color in $color-palette {
+      $color-family-keys: map-keys($color-palette);
+      @each $key in $color-family-keys {
+        @if $key == $color-group {
+          $color-list: map-get($color-palette, $key);
+          //$level: $level + 1; // nth is non-zero based
+          @return nth($color-list, $level);
+        }
+      }
+    }
+  }

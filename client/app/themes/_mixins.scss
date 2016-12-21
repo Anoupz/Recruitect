@@ -1,0 +1,25 @@
+@mixin primary-button-responsive($padding: 3rem, $max-width: none, $min-width: none) {
+
+  @include button-width($padding, $max-width, $min-width);
+
+  @include button-color(
+  $background-color: get-color(magenta, 7),
+  $background-color-hover: get-color(magenta, 8),
+  $border-color: get-color(red, 5),
+  $border-color-hover: get-color(magenta, 9),
+  $text-color: get-color(gray, 1)
+  );
+
+  // responsive button renders as medium at the small breakpoint
+  @include primary-button-medium();
+
+  // responsive button renders as medium at the medium breakpoint
+  @include breakpoint(medium) {
+    @include primary-button-medium();
+  }
+
+  // responsive button renders as large at the large breakpoint
+  @include breakpoint(large) {
+    @include primary-button-large();
+  }
+}

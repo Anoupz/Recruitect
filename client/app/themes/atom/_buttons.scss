@@ -1,0 +1,196 @@
+/*  ==================================================================
+    Mixins common to all buttons
+    ==================================================================  */
+
+@mixin button-width($padding: 2rem, $max-width: none, $min-width: none) {
+  @if $max-width != 'none' { max-width: $max-width }
+  @if $min-width != 'none' { min-width: $min-width }
+  @if $padding != '2rem' {
+    padding: 0 $padding;
+  }
+}
+
+@mixin button-color(
+  $background-color: none,
+  $background-color-hover: none,
+  $border-color: none,
+  $border-color-hover: none,
+  $text-color: none,
+  $text-color-hover: none
+) {
+  @if $background-color != 'none' { background-color: $background-color }
+  @if $border-color != 'none' { border-color: $border-color }
+  @if $text-color != 'none' { color: $text-color }
+
+  &:hover,
+  &:focus,
+  &:active {
+    @if $text-color-hover != 'none' { color: $text-color-hover }
+    @if $border-color-hover != 'none' { border-color: $border-color-hover }
+    @if $background-color-hover != 'none' { background-color: $background-color-hover }
+  }
+}
+/*  ==================================================================
+    Mixins for "primary" buttons
+    ==================================================================  */
+
+
+@mixin primary-button-small() {
+  border-radius: rem-calc(4);
+  height: rem-calc(30);
+
+
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+
+  text-shadow: none;
+  box-shadow: none;
+
+  border-bottom-width: rem-calc(4);
+  border-bottom-style: solid;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-bottom-width: rem-calc(4);
+    border-bottom-style: solid;
+    text-shadow: none;
+  }
+}
+
+@mixin primary-button-medium() {
+  border-radius: rem-calc(4);
+  height: rem-calc(42);
+
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+
+  text-shadow: 0px -1px 0px get-color(red, 5);
+  box-shadow: 0px 0.5px 0.875px 0px rgba(0,0,0,0.5);
+
+  border-bottom-width: rem-calc(4);
+  border-bottom-style: solid;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-bottom-width: rem-calc(4);
+    border-bottom-style: solid;
+    text-shadow: 0px -1px 0px get-color(magenta, 9);
+  }
+}
+
+@mixin primary-button-large() {
+  border-radius: rem-calc(3);
+  height: rem-calc(40);
+
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+
+  text-shadow: 0px -1px 0px get-color(red, 5);
+  box-shadow: 0px 0.5px 0.875px 0px rgba(0,0,0,0.5);
+
+  border-bottom-width: rem-calc(4);
+  border-bottom-style: solid;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-bottom-width: rem-calc(4);
+    border-bottom-style: solid;
+    text-shadow: 0px -1px 0px get-color(magenta, 9);
+  }
+
+}
+
+
+@mixin primary-button-responsive($padding: 3rem, $max-width: none, $min-width: none) {
+
+  @include button-width($padding, $max-width, $min-width);
+
+  @include button-color(
+  $background-color: get-color(magenta, 7),
+  $background-color-hover: get-color(magenta, 8),
+  $border-color: get-color(red, 5),
+  $border-color-hover: get-color(magenta, 9),
+  $text-color: get-color(gray, 1)
+  );
+
+  // responsive button renders as medium at the small breakpoint
+  @include primary-button-medium();
+
+  // responsive button renders as medium at the medium breakpoint
+  @include breakpoint(medium) {
+    @include primary-button-medium();
+  }
+
+  // responsive button renders as large at the large breakpoint
+  @include breakpoint(large) {
+    @include primary-button-large();
+  }
+}
+
+
+
+
+button.primary, button.primary.responsive {
+
+  @include primary-button-responsive();
+
+  &.double-padding {
+    padding: 0 6rem;
+  }
+
+  &.half-padding {
+    padding: 0 1.5rem;
+  }
+
+  &.quarter-padding {
+    padding: 0 0.75rem;
+  }
+
+  &.zero-padding {
+    padding: 0;
+  }
+
+  &.full-width {
+    min-width: 100%;
+  }
+
+  // static heights, line-heights, and font-sizes
+  &.small {
+    @include primary-button-small();
+
+    @include breakpoint(medium) {
+      @include primary-button-small();
+    }
+    @include breakpoint(large) {
+      @include primary-button-small();
+    }
+  }
+  &.medium {
+    @include primary-button-medium();
+
+    @include breakpoint(medium) {
+      @include primary-button-medium();
+    }
+    @include breakpoint(large) {
+      @include primary-button-medium();
+    }
+  }
+
+  &.large {
+    @include primary-button-large();
+
+    @include breakpoint(medium) {
+      @include primary-button-large();
+    }
+    @include breakpoint(large) {
+      @include primary-button-large();
+    }
+  }
+
+}
