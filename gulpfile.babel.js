@@ -37,13 +37,8 @@ const paths = {
       `${serverPath}/**/!(*.spec|*.integration).js`,
       `!${serverPath}/config/local.env.sample.js`
     ],
-    json: [`${serverPath}/**/*.json`],
-    test: {
-      integration: [`${serverPath}/**/*.integration.js`, 'mocha.global.js'],
-      unit: [`${serverPath}/**/*.spec.js`, 'mocha.global.js']
-    }
+    json: [`${serverPath}/**/*.json`]
   },
-  karma: 'karma.conf.js',
   dist: 'dist'
 };
 
