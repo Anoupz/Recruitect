@@ -4,13 +4,6 @@
 import path from 'path';
 import _ from 'lodash';
 
-/*function requiredProcessEnv(name) {
-  if(!process.env[name]) {
-    throw new Error('You must set the ' + name + ' environment variable');
-  }
-  return process.env[name];
-}*/
-
 // All configurations will extend these options
 // ============================================
 var all = {
@@ -23,27 +16,19 @@ var all = {
   browserSyncPort: process.env.BROWSER_SYNC_PORT || 3000,
 
   // Server port
-  port: process.env.PORT || 9000,
+  port: process.env.PORT || 3000,
+
+  // Backend API response timeout
+  API_TIMEOUT: 5000,
 
   // Server IP
   ip: process.env.IP || '0.0.0.0',
 
-  // Should we populate the DB with sample data?
-  seedDB: false,
-
   // Secret for session, you will want to change this and make it an environment variable
   secrets: {
-    session: 'recrutect-secret'
+    session: 'recruitect-secret'
   },
 
-  // MongoDB connection options
-  mongo: {
-    options: {
-      db: {
-        safe: true
-      }
-    }
-  }
 };
 
 // Export the config object based on the NODE_ENV
