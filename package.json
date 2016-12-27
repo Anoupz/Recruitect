@@ -104,7 +104,7 @@
   "scripts": {
     "test": "gulp test",
     "flow": "flow",
-    "gulp": "gulp",
+    "gulp": "gulp serve",
     "start": "gulp serve",
     "preinstall": "npm install -g gulp",
     "prestart": "npm run gulp",
