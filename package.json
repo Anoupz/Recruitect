@@ -104,8 +104,10 @@
   "scripts": {
     "test": "gulp test",
     "flow": "flow",
+    "gulp": "gulp",
     "start": "gulp serve",
     "preinstall": "npm install -g gulp",
+    "prestart": "npm run gulp",
     "prod": "NODE_ENV='prod' gulp serve:dist"
   },
   "private": true
