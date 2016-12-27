@@ -8,6 +8,7 @@ MAINTAINER Anoop
 # on the newest versions of packages and their dependencies.
 RUN apt-get update && apt-get install -y \
 	curl \
+	python \
 	make \
 	g++ \
 	git-core \
