@@ -1,0 +1,14 @@
+{
+"AWSEBDockerrunVersion": "1",
+"Image": {
+  "Name": "wanoop/recruitect",
+  "Update": "true"
+},
+"Ports": [
+  {
+    "ContainerPort": "3000"
+  }
+],
+"Volumes": [
+  ]
+}

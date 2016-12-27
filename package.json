@@ -105,7 +105,6 @@
     "test": "gulp test",
     "flow": "flow",
     "start": "gulp serve",
-    "preinstall": "npm install -g gulp",
     "prod": "NODE_ENV='prod' gulp serve:dist"
   },
   "private": true
