@@ -27,6 +27,7 @@ RUN npm set progress=false
 
 # install our dependencies and nodejs
 RUN npm install -g gulp
+RUN npm install -g node-gyp
 
 # use changes to package.json to force Docker not to use the cache
 # when we change our application's nodejs dependencies:
@@ -45,4 +46,6 @@ ADD . /src
 EXPOSE 3000
 
 # Start nginx server and kickstart gulp build workflow
+# Start nginx server and kickstart gulp build workflow
+CMD gulp serve:dist
 CMD gulp serve:dist
