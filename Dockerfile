@@ -45,6 +45,4 @@ ADD . /src
 EXPOSE 3000
 
 # Start nginx server and kickstart gulp build workflow
-# Start nginx server and kickstart gulp build workflow
-CMD gulp serve:dist
 CMD gulp serve:dist
