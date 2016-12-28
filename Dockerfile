@@ -20,14 +20,13 @@ RUN apt-get update && apt-get install -y \
 	nodejs
 
 # Installs all the build tools for node like NPM to the $PATH
-RUN apt-get install -y build-essential g++
+RUN apt-get install -y build-essential
 
 # Mutes the npm installation progress logging
 RUN npm set progress=false
 
 # install our dependencies and nodejs
 RUN npm install -g gulp
-RUN npm install -g node-gyp
 
 # use changes to package.json to force Docker not to use the cache
 # when we change our application's nodejs dependencies:
