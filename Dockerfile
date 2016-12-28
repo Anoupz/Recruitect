@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
 	nodejs
 
 # Installs all the build tools for node like NPM to the $PATH
-RUN apt-get install -y build-essential
+RUN apt-get install -y build-essential g++
 
 # Mutes the npm installation progress logging
 RUN npm set progress=false
