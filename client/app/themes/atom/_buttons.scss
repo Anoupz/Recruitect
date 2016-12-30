@@ -47,13 +47,11 @@
   text-shadow: none;
   box-shadow: none;
 
-  border-bottom-width: rem-calc(4);
   border-bottom-style: solid;
 
   &:hover,
   &:focus,
   &:active {
-    border-bottom-width: rem-calc(4);
     border-bottom-style: solid;
     text-shadow: none;
   }
@@ -70,13 +68,11 @@
   text-shadow: 0px -1px 0px get-color(red, 5);
   box-shadow: 0px 0.5px 0.875px 0px rgba(0,0,0,0.5);
 
-  border-bottom-width: rem-calc(4);
   border-bottom-style: solid;
 
   &:hover,
   &:focus,
   &:active {
-    border-bottom-width: rem-calc(4);
     border-bottom-style: solid;
     text-shadow: 0px -1px 0px get-color(magenta, 9);
   }
@@ -93,13 +89,11 @@
   text-shadow: 0px -1px 0px get-color(red, 5);
   box-shadow: 0px 0.5px 0.875px 0px rgba(0,0,0,0.5);
 
-  border-bottom-width: rem-calc(4);
   border-bottom-style: solid;
 
   &:hover,
   &:focus,
   &:active {
-    border-bottom-width: rem-calc(4);
     border-bottom-style: solid;
     text-shadow: 0px -1px 0px get-color(magenta, 9);
   }

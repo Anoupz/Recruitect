@@ -19,9 +19,9 @@ import footer from '../components/footer/footer.component';
 import './app.scss';
 
 angular.module('recruitectApp', [ngCookies, ngResource, ngSanitize, uiRouter, main, footer,
-    constants, util
-  ])
-  .config(routeConfig);
+  constants, util
+])
+.config(routeConfig);
 
 angular.element(document)
   .ready(() => {

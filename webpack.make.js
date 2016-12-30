@@ -47,9 +47,11 @@ module.exports = function makeWebpackConfig(options) {
         'angular-sanitize',
         'angular-ui-router',
         'lodash',
-        '!!script!jquery/dist/jquery.min.js',
-        'foundation-sites/dist/js/foundation.min.js'
+        './client/assets/vendor/vendor.js'
       ]
+    };
+    config.externals = {
+      jquery: 'jQuery'
     };
   }
 
