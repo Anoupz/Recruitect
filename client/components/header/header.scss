@@ -3,19 +3,42 @@ $subnav-font-size: 0.75rem;
 $subnav-link-opacity: 0.15;
 $header-height: 0.5rem;
 $transition: all .35s ease-in-out;
-
 .header {
   text-align: center;
-  position: absolute;
+  position: relative;
   width: 100%;
   background: transparent;
   background-size: cover;
   overflow: visible;
   padding-top: $header-height;
   padding-bottom: $header-height;
-
-  
-  .headline {
-    color: get-color(gray, 1);
+  .headline,
+  .top-bar-right {
+    a {
+      color: get-color(magenta, 6);
+    }
+  }
+  .top-bar-right {
+    @include breakpoint(small down) {
+      flex: 0 0 60%;
+    }
+  }
+  .header-links {
+    padding: 0rem 0.5rem;
+    font-size: rem-calc(20);
+    @include breakpoint(small down) {
+      font-size: rem-calc(15px);
+    }
   }
 }
+
+.main-header {
+  position: absolute;
+  .headline,
+  .top-bar-right {
+    a {
+      color: get-color(gray, 1);
+    }
+  }
+}
+

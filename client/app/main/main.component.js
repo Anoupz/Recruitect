@@ -13,6 +13,7 @@ export class MainController {
   }
 
   $onInit() {
+    jQuery('.header').addClass('main-header');
     this.$http.get('/api/things')
       .then(response => {
         this.awesomeThings = response.data;

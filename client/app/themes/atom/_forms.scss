@@ -9,16 +9,45 @@ input:not([type='radio']):not([type='checkbox']) {
   &:hover,
   &:focus {
     background-color: get-color(gray, 1);
-    border: 2px get-color(gray, 8) solid;
+    border: rem-calc(2px) get-color(gray, 8) solid;
     box-shadow: 0 0 rem-calc(3px) 0 rgba(0, 0, 0, .5);
     transition: none;
     height: 2.5rem;
     padding-top: 1rem; // Fixes firefox render bug
   }
-
   // Hides IE 11's "x" icon when user types in a value in field
   &::-ms-clear,
   &::-ms-reveal {
     display: none;
+  }
+}
+
+.registration-form {
+  input:not([type='radio']):not([type='checkbox']) {
+    display: inline-flex;
+    width: 50%;
+    background-color: get-color(gray, 1);
+    border: none;
+    border-bottom: rem-calc(1px) get-color(gray, 5) solid;
+    outline: none;
+    box-shadow: none;
+    height: 2.5rem;
+    padding: 1rem;
+    &:active,
+    &:hover,
+    &:focus {
+      background-color: get-color(gray, 1);
+      border: none;
+      border-bottom: rem-calc(1px) get-color(gray, 8) solid;
+      box-shadow: 0 0 rem-calc(3px) 0 rgba(0, 0, 0, .5);
+      transition: none;
+      height: 2.5rem;
+      padding-top: 1rem; // Fixes firefox render bug
+    }
+    // Hides IE 11's "x" icon when user types in a value in field
+    &::-ms-clear,
+    &::-ms-reveal {
+      display: none;
+    }
   }
 }
