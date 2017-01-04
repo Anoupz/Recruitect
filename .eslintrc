@@ -85,7 +85,7 @@
         "no-octal-escape": 0,                                       //disallow use of octal escape sequences in string literals, such as var foo = "Copyright \251";
         "no-octal": 0,                                              //disallow use of octal literals
         "no-param-reassign": 0,                                     //disallow reassignment of function parameters
-        "no-process-env": 1,                                        //disallow use of process.env
+        "no-process-env": 0,                                        //disallow use of process.env
         "no-proto": 2,                                              //disallow usage of __proto__ property
         "no-redeclare": 2,                                          //disallow declaring the same variable more than once
         "no-return-assign": 2,                                      //disallow use of assignment in return statement
@@ -129,7 +129,7 @@
         "callback-return": 2,                                       //enforce return after a callback
         "global-require": 0,                                        //enforce require() on top-level module scope
         "handle-callback-err": 2,                                   //enforce error handling in callbacks
-        "no-mixed-requires": 2,                                     //disallow mixing regular variable and require declarations
+        "no-mixed-requires": 0,                                     //disallow mixing regular variable and require declarations
         "no-new-require": 2,                                        //disallow use of new operator with the require function
         "no-path-concat": 2,                                        //disallow string concatenation with __dirname and __filename
         "no-process-exit": 2,                                       //disallow process.exit()
@@ -159,10 +159,10 @@
             "before": true,
             "after": true,
             "overrides": {
-                "if": {"after": false},
-                "for": {"after": false},
-                "while": {"after": false},
-                "catch": {"after": false}
+                "if": {"after": true},
+                "for": {"after": true},
+                "while": {"after": true},
+                "catch": {"after": true}
             }
         }],                                                         //enforce spacing before and after keywords
         "linebreak-style": 2,                                       //disallow mixed 'LF' and 'CRLF' as linebreaks
@@ -204,7 +204,7 @@
         "object-curly-newline": 0,                                  //enforce consistent line breaks inside braces
         "object-curly-spacing": 0,                                  //require or disallow padding inside curly braces
         "object-property-newline": 0,                               //enforce placing object properties on separate lines
-        "one-var": [2, "never"],                                    //require or disallow one variable declaration per function
+        "one-var": [0, "never"],                                    //require or disallow one variable declaration per function
         "one-var-declaration-per-line": 2,                          //require or disallow an newline around variable declarations
         "operator-assignment": 0,                                   //require assignment operator shorthand where possible or prohibit it entirely
         "operator-linebreak": [1, "before"],                        //enforce operators to be placed before or after line breaks
@@ -248,7 +248,7 @@
         "prefer-reflect": 1,                                        //suggest using Reflect methods where applicable
         "prefer-rest-params": 1,                                    //suggest using the rest parameters instead of arguments
         "prefer-spread": 1,                                         //suggest using the spread operator instead of .apply().
-        "prefer-template": 1,                                       //suggest using template literals instead of strings concatenation
+        "prefer-template": 0,                                       //suggest using template literals instead of strings concatenation
         "require-yield": 2,                                         //disallow generator functions that do not have yield
         "rest-spread-spacing": ["error", "never"],                  //enforce spacing between rest and spread operators and their expressions
         "template-curly-spacing": 2,                                //enforce spacing around embedded expressions of template strings

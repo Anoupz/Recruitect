@@ -1,8 +1,11 @@
 'use strict';
-/*eslint no-process-env:0*/
 
 // Development specific configuration
 // ==================================
 module.exports = {
-
+  dynamoDbConfig: {
+    region: 'us-west-2',
+    endpoint: 'http://localhost:8000'
+  }
 };
+

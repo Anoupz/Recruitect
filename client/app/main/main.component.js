@@ -3,21 +3,8 @@ import uiRouter from 'angular-ui-router';
 import routing from './main.routes';
 
 export class MainController {
-  $http;
-
-  awesomeThings = [];
-
-  /*@ngInject*/
-  constructor($http) {
-    this.$http = $http;
-  }
-
   $onInit() {
     jQuery('.header').addClass('main-header');
-    this.$http.get('/api/things')
-      .then(response => {
-        this.awesomeThings = response.data;
-      });
   }
 }
 
