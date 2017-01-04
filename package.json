@@ -108,7 +108,8 @@
     "test": "gulp test",
     "flow": "flow",
     "start": "gulp serve",
-    "prod": "NODE_ENV='prod' gulp serve:dist"
+    "prod": "NODE_ENV='prod' gulp serve:dist",
+    "createUsers": "node ./server/config/tables/createUsersTable.js"
   },
   "private": true
 }
