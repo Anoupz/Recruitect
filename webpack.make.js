@@ -32,7 +32,7 @@ module.exports = function makeWebpackConfig(options) {
    * Should be an empty object if it's generating a test build
    * Karma will set this when it's a test build
    */
-  if(TEST) {
+  if (TEST) {
     config.entry = {};
   } else {
     config.entry = {
@@ -40,8 +40,6 @@ module.exports = function makeWebpackConfig(options) {
       polyfills: './client/polyfills.js',
       vendor: [
         'angular',
-        'angular-animate',
-        'angular-aria',
         'angular-cookies',
         'angular-resource',
         'angular-sanitize',
